@@ -68,7 +68,7 @@ $(document).ready(function () {
             "type": "vibrate",
             "location": "lowerLegs"
         };
-        conn.sendMessage(msg, 0); 
+        conn.sendMessage(msg, 0);
     });
     
 	// Process incoming game messages
