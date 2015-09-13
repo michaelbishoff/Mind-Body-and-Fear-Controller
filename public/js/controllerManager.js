@@ -14,56 +14,63 @@ $(document).ready(function () {
 	conn = new Connection();
 	conn.sendMessage({"type": "connect"});
 	
-    $("#head").on("touchstart click", function() {
+    var eventType;
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        eventType = "touchend";
+    } else {
+        eventType = "click";
+    }
+    
+    $("#head").on(eventType, function() {
         var msg = {
             "type": "vibrate",
             "location": "head"
         };
         conn.sendMessage(msg, 0);
     });
-    $("#leftUpperArm").on("touchstart click", function() {
+    $("#leftUpperArm").on(eventType, function() {
         var msg = {
             "type": "vibrate",
             "location": "leftUpperArm"
         };
         conn.sendMessage(msg, 0);
     });
-    $("#leftLowerArm").on("touchstart click", function() {
+    $("#leftLowerArm").on(eventType, function() {
         var msg = {
             "type": "vibrate",
             "location": "leftLowerArm"
         };
         conn.sendMessage(msg, 0);
     });
-    $("#rightUpperArm").on("touchstart click", function() {
+    $("#rightUpperArm").on(eventType, function() {
         var msg = {
             "type": "vibrate",
             "location": "rightUpperArm"
         };
         conn.sendMessage(msg, 0);
     });
-    $("#rightLowerArm").on("touchstart click", function() {
+    $("#rightLowerArm").on(eventType, function() {
         var msg = {
             "type": "vibrate",
             "location": "rightLowerArm"
         };
         conn.sendMessage(msg, 0);
     });
-    $("#chest").on("touchstart click", function() {
+    $("#chest").on(eventType, function() {
         var msg = {
             "type": "vibrate",
             "location": "chest"
         };
         conn.sendMessage(msg, 0);        
     });
-    $("#upperLegs").on("touchstart click", function() {
+    $("#upperLegs").on(eventType, function() {
         var msg = {
             "type": "vibrate",
             "location": "upperLegs"
         };
         conn.sendMessage(msg, 0);        
     });
-    $("#lowerLegs").on("touchstart click", function() {
+    $("#lowerLegs").on(eventType, function() {
         var msg = {
             "type": "vibrate",
             "location": "lowerLegs"
